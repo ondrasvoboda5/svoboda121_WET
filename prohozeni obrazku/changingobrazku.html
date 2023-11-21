@@ -1,0 +1,75 @@
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výměna obrázku</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Coming+Soon&family=Comme:wght@100;200;400&family=Montserrat:ital,wght@0,100;1,100&family=Nanum+Gothic+Coding:wght@700&family=Roboto:wght@100&display=swap');
+        body {
+            text-align: center;
+        }
+        #kostky {
+            width: 150px;
+            margin-left: -1400px;
+        }
+        #mario {
+            width: 150px;
+            margin-left:-1400px;
+        }
+        #div2 {
+            display: none;
+            
+        }
+        #nadpis {
+            color: blue;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #nadpis2 {
+            color: blue;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #obrazek2 {
+            width: 700px;
+            height: 400px;
+        }
+
+    </style>
+
+    <div id="div">
+        <img id="kostky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png" > <br>
+        <h1 id="nadpis">Jak jsem se měl o prázdninách aneb deník nadšeného studenta</h1>
+        <h2 id="nadpis2">Měl jsem se skvěle!</h2>
+        <img id="obrazek" src="https://gifsec.com/wp-content/uploads/2022/09/hello-gif-1.gif"> <br>
+        <button id="tlacitko">Klik</button>
+    </div>
+    <div id="div2">
+        <img id="mario" src="https://purepng.com/public/uploads/large/purepng.com-mariomariofictional-charactervideo-gamefranchisenintendodesigner-1701528634653vywuz.png" alt="">
+        <h1 id="nadpis3">Prázdniny</h1>
+        <h2 id="nadpis4">Nemám rád Třebešín</h2>
+        <img id="obrazek2" src="https://www.trebesin.cz/images/aktuality_foto/Trebesin_foto_2.jpg" > <br>
+    </div>
+
+    <script>
+        let div = document.querySelector("#div")
+        let div2 = document.querySelector("#div2")
+        let mario = document.querySelector("#mario")
+        let kostky = document.querySelector("#kostky")
+
+        kostky.addEventListener("click", zmenStranku)
+        mario.addEventListener("click", zmenStranku1)
+
+        function zmenStranku () {
+            div.style.display = "none"
+            div2.style.display = "block"
+            
+        }
+        function zmenStranku1 () {
+            div.style.display = "block"
+            div2.style.display = "none"
+        }
+
+    </script>
+</body>
+</html>

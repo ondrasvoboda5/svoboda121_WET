@@ -1,0 +1,196 @@
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Úkol 1</title>
+        <style>
+            body {
+                font-family: monospace;
+                font-size: 32px;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+            .tlacitko {
+                padding: 10px;
+                font-size: 20px;
+                margin: 10px;
+                background-color: rgb(132, 252, 132);
+                border-radius: 15%;
+            }
+
+            .platno {
+                border: 2px solid black;
+                width: 800px;
+                height: 500px;
+                margin: auto;
+
+            }
+
+            .ctverec {
+                height: 100px;
+                width: 100px;
+                background-color: rgb(204, 90, 90);
+                border: 1px solid black;
+                display: inline-block;
+                margin: 10px;
+                border-color: black;
+
+            }
+
+            .kolecko {
+                height: 100px;
+                width: 100px;
+                border: 1px solid black;
+                background-color: rgb(39, 123, 202);
+                display: inline-block;
+                border-radius: 50%;
+                margin: 10px;
+                border-color: black;
+            }
+
+            .text-box {
+                color: black;
+                margin: 10px;
+            }
+
+            #obrazek {
+                width: 50px;
+                right: 5%;
+                top: 5%;
+                position: absolute;
+            }
+            #div {
+                text-align: center;
+            }
+            #obrazek2 {
+                width: 50px;
+                right: 5%;
+                top: 5%;
+                position: absolute;
+            }
+            #input {
+                width: 90px;
+                margin: 40px;
+                display: inline-block;
+                margin-left: -30px;
+                
+            }
+            #napis {
+                display: inline-block;
+                margin: 50px;
+            }
+            .trojuhelnik {
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 0px 50px 50px 50px;
+                display: inline-block;
+                margin: 10px;
+                border-color: transparent transparent rgb(172, 52, 170) transparent;
+            }
+            #div2 {
+                display: none;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="div">
+            <h1>Picasso</h1>
+            <div class="platno"></div>
+            <p id="napis">Kolik tvarů?</p>
+            <input type= "text" name="" id="input">
+            <br> <button id="tlacitkoText" class="tlacitko">Text</button>
+            <button id="tlacitkoKolecka" class="tlacitko">Kolečka</button>
+            <button id="tlacitkoCtverce" class="tlacitko">Čtverečky</button>
+            <button id="tlacitkoTrojuhelniky" class="tlacitko">Trojúhelníky</button>
+        </div>
+        
+        <img id="obrazek" src="hide.png" alt="">
+        
+
+        </div>
+
+        <script>
+            const platno = document.querySelector(".platno")
+            const tlacitkoCtverce = document.querySelector("#tlacitkoCtverce")
+            const tlacitkoKolecka = document.querySelector("#tlacitkoKolecka")
+            const tlacitkoText = document.querySelector("#tlacitkoText")
+            const tlacitkoTrojuhelniky = document.querySelector("#tlacitkoTrojuhelniky")
+            const obrazek = document.querySelector("#obrazek")
+            const div = document.querySelector("#div")
+        
+            tlacitkoText.addEventListener ("click", kresliText)
+            tlacitkoKolecka.addEventListener ("click", kresliKolecko)
+            tlacitkoCtverce.addEventListener ("click", kresliCtverec)
+            tlacitkoTrojuhelniky.addEventListener("click", kresliTrojuhelniky)
+            obrazek.addEventListener ("click", skryjStranku)
+            
+            let skrytyObsah = true;
+
+            function skryjStranku () {
+                if (skrytyObsah) {
+                    div.style.display = "block";
+                    skrytyObsah = false;
+                } else {
+                    div.style.display = "none"
+                    skrytyObsah = true;
+                }
+
+            }
+            
+            
+            function kresliTrojuhelniky () {
+                const input = document.querySelector("#input")
+                let hodnotaInputu = parseInt(input.value);
+                
+                for (let i = 0; i < hodnotaInputu; i++) {
+                    let novyDiv = document.createElement("div");
+                    
+                    novyDiv.classList.add("trojuhelnik");
+                    platno.appendChild(novyDiv);
+                }
+            }
+
+            function kresliCtverec() {
+                const input = document.querySelector("#input")
+                let hodnotaInputu = parseInt(input.value);
+                
+                for (let i = 0; i < hodnotaInputu; i++) {
+                    let novyDiv = document.createElement("div");
+                    
+                    novyDiv.classList.add("ctverec");
+                    platno.appendChild(novyDiv);
+                }
+                
+            }
+            
+            function kresliKolecko() {
+                const input = document.querySelector("#input")
+                let hodnotaInputu = parseInt(input.value);
+                
+                for (let i = 0; i < hodnotaInputu; i++) {
+                    let novyDiv = document.createElement("div");
+                    novyDiv.classList.add("kolecko");
+                    platno.appendChild(novyDiv);
+                }
+            }
+            
+            function kresliText() {
+                const input = document.querySelector("#input")
+                let hodnotaInputu = parseInt(input.value);
+                for (let i = 0; i < hodnotaInputu; i++){
+                    let odpoved = document.createElement("div")
+                    odpoved.innerText= "Áááá"
+                    odpoved.style.margin = "10"
+                    odpoved.style.display = "inline-block"
+                    platno.appendChild(odpoved);
+                }
+            }
+
+        </script>
+    </body>
+</html>

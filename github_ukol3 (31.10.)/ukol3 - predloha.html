@@ -1,0 +1,41 @@
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Úkol 3</title>
+</head>
+<body>
+    
+<style>
+
+ html {
+    font-family: monospace;
+ }
+</style>
+    
+<script>
+    
+
+function vytvorSeznam() {
+        
+            let cislo = window.prompt("Kolik kamenů je přítomno?");
+            let seznam = [];
+
+            
+
+            for (let i = 1; i <= parseInt(cislo); i++) {
+                seznam.push("kámen " + i);
+            }
+            
+            
+
+            
+            let vysledek = document.createElement("div");
+            vysledek.innerText = "\n•" + seznam.join("\n•");
+            document.body.appendChild(vysledek);
+        }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test</title>
+        <style>
+            body {
+                font-family: monospace;
+                font-size: 32px;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+            .tlacitko {
+                padding: 10px;
+                font-size: 20px;
+                margin: 10px;
+            }
+
+            .platno {
+                border: 2px solid black;
+                width: 800px;
+                height: 500px;
+                margin: auto;
+            }
+
+            .ctverec {
+                height: 100px;
+                width: 100px;
+                background-color: brown;
+                border: 1px solid black;
+                display: inline-block;
+                margin: 10px;
+                border-color: black;
+            }
+
+            .kolecko {
+                height: 100px;
+                width: 100px;
+                border: 1px solid black;
+                background-color: blue;
+                display: inline-block;
+                border-radius: 50%;
+                margin: 10px;
+                border-color: black;
+            }
+
+            .text-box {
+                color: black;
+                margin: 10px;
+            }
+
+            #obrazek {
+                width: 50px;
+                right: 5%;
+                top: 5%;
+                position: absolute;
+            }
+            #div {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div">
+            <h1>Picasso</h1>
+            <div class="platno"></div>
+            <button id="tlacitkoText" class="tlacitko">Text</button> <br />
+            <button id="tlacitkoKolecka" class="tlacitko">Kolečka</button>
+            <br />
+            <button id="tlacitkoCtverce" class="tlacitko">Čtverečky</button>
+            <br />
+        </div>
+
+        <img id="obrazek" src="hide.png" alt="" />
+
+        <script>
+            const platno = document.querySelector(".platno")
+            const tlacitkoCtverce = document.querySelector("#tlacitkoCtverce")
+            const tlacitkoKolecka = document.querySelector("#tlacitkoKolecka")
+            const tlacitkoText = document.querySelector("#tlacitkoText")
+            const obrazek = document.querySelector("#obrazek")
+
+            tlacitkoText.addEventListener("click", kresliText)
+            tlacitkoKolecka.addEventListener("click", kresliKolecko)
+            tlacitkoCtverce.addEventListener("click", kresliCtverec)
+            obrazek.addEventListener("click", skryjStranku)
+
+            function skryjStranku() {
+                div.style.display = "none"
+            }
+
+            function kresliCtverec() {
+                for (let i = 0; i < 5; i++) {
+                    let novyDiv = document.createElement("div")
+
+                    novyDiv.classList.add("ctverec")
+                    platno.appendChild(novyDiv)
+                }
+            }
+
+            function kresliKolecko() {
+                for (let i = 0; i < 5; i++) {
+                    let novyDiv = document.createElement("div")
+                    novyDiv.classList.add("kolecko")
+                    platno.appendChild(novyDiv)
+                }
+            }
+
+            function kresliText() {
+                for (let i = 0; i < 5; i++) {
+                    let odpoved = document.createElement("div")
+                    // Jestli je mezera za Áááá úmyslně, tak to bohužel nemůže fungovat, protože inner-block ignoruje mezery na konci. Zajímavý pokus
+                    // Řešením bylo přidat prvku margin, přes classu nebo style.margin
+                    odpoved.innerText = "Áááá "
+                    odpoved.style.display = "inline-block"
+                    platno.appendChild(odpoved)
+                }
+            }
+        </script>
+    </body>
+</html>

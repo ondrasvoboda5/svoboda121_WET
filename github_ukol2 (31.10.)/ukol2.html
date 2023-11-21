@@ -1,0 +1,55 @@
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Úkol 2</title>
+    
+    <link rel="stylesheet" href="ukol2.css">
+</head>
+<body>
+    <div class="div">
+        <h1 id="nadpis">Dark mode web</h1>
+        <p id="podnadpis">Chci dark mode</p>
+        <button>Nic nedělám</button>
+    </div>
+    <img id="mesic" src="https://pngimg.com/uploads/moon/moon_PNG12.png" alt="">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Playpen+Sans:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Lato:wght@300&family=Playpen+Sans:wght@200;300&display=swap');
+    .div {
+        text-align: center;
+    }
+    #mesic {
+    width: 150px;
+    margin-top: -100px;
+    }
+    body {
+        background-color: #BFD7ED;
+    }
+    #nadpis {
+        font-family: 'Lato', sans-serif;
+    }
+    #podnadpis {
+        font-family: 'Playpen Sans', cursive;
+    }
+    </style>
+
+    <script>
+        
+    let mesic = document.querySelector ("#mesic")
+    let nadpis = document.querySelector ("#nadpis")
+    let podnadpis = document.querySelector ("#podnadpis")
+
+
+    mesic.addEventListener ("click", zmenPozadi)
+
+    function zmenPozadi () {
+        document.body.style.backgroundColor = "#003B73";
+        nadpis.style.color = "white";
+        podnadpis.style.color = "white";
+    }
+    </script>
+
+</body>
+</html>
